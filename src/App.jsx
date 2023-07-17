@@ -1,4 +1,5 @@
 import "./App.css";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextArea from "./components/TextArea";
 
@@ -9,6 +10,7 @@ function App() {
       <div className="container my-3">
         <TextArea heading="Enter text below to analyse👇"/>
       </div>
+      {/* <About/> */}
     </>
   );
 }
