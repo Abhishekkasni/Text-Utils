@@ -25,7 +25,7 @@ export default function TextArea(props) {
   const handleExtraSpaces=()=>{
     var string = text
     var regexPattern = /\s+/g
-    var ans = string.replace(regexPattern, " ")
+    var ans = string.replace(regexPattern, "")
     setText(ans)
   }
 
@@ -41,31 +41,32 @@ export default function TextArea(props) {
           <textarea
             className="form-control"
             id="myBox"
-            rows={8}
+            style={{backgroundColor:props.mode==='dark'?'black':'white',color:props.mode==='dark'?'white':'black'}}
+            rows={16}
             value={text}
             onChange={handleOnChange}
           />
           <button
             type="button"
-            className="btn btn-primary my-3"
+            className={`btn btn-${props.mode==='dark'?'light':'dark'} my-3`}
             onClick={handleUpClick}
           >
             Convert to Uppercase
           </button>
           <button
             type="button"
-            className="btn btn-primary my-3 mx-2"
+            className={`btn btn-${props.mode==='dark'?'light':'dark'} my-3 mx-2`}
             onClick={handleLowClick}
           >
             Convert to Lowercase
           </button>
-          <button className="btn btn-primary my-3 mx-2" onClick={handleCopy}>
+          <button className={`btn btn-${props.mode==='dark'?'light':'dark'} my-3 mx-2`} onClick={handleCopy}>
             Copy Text
           </button>
-          <button className="btn btn-primary my-3 mx-2" onClick={handleClear}>
+          <button className={`btn btn-${props.mode==='dark'?'light':'dark'} my-3 mx-2`} onClick={handleClear}>
             Clear Text
           </button>
-          <button className="btn btn-primary my-3 mx-2" onClick={handleExtraSpaces}>
+          <button className={`btn btn-${props.mode==='dark'?'light':'dark'} my-3 mx-2`} onClick={handleExtraSpaces}>
             Remove Extra Spaces
           </button>
         </div>
