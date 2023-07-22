@@ -25,7 +25,7 @@ export default function TextArea(props) {
   const handleExtraSpaces=()=>{
     var string = text
     var regexPattern = /\s+/g
-    var ans = string.replace(regexPattern, "")
+    var ans = string.replace(regexPattern, " ")
     setText(ans)
   }
 
@@ -60,14 +60,14 @@ export default function TextArea(props) {
           >
             Convert to Lowercase
           </button>
+          <button className={`btn btn-${props.mode==='dark'?'light':'dark'} my-3 mx-2`} onClick={handleExtraSpaces}>
+            Remove Extra Spaces
+          </button>
           <button className={`btn btn-${props.mode==='dark'?'light':'dark'} my-3 mx-2`} onClick={handleCopy}>
             Copy Text
           </button>
           <button className={`btn btn-${props.mode==='dark'?'light':'dark'} my-3 mx-2`} onClick={handleClear}>
             Clear Text
-          </button>
-          <button className={`btn btn-${props.mode==='dark'?'light':'dark'} my-3 mx-2`} onClick={handleExtraSpaces}>
-            Remove Extra Spaces
           </button>
         </div>
       </div>
